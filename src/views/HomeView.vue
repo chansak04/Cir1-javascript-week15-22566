@@ -1,8 +1,23 @@
+<script setup>
+import { toast } from 'vue3-toastify';
+import 'vue3-toastify/dist/index.css';
+
+toast.info("ยินดีต้อนรับ สาขาเทคโนโลยีสารสนเทศ" , {
+    autoClose: 2000,
+    position:toast.POSITION.TOP_CENTER
+});
+const notify = () => {
+      toast.success("Wow so easy !", {
+        autoClose: 1000,
+      }); // ToastOptions
+    return { notify };
+}
+</script>
 <template>
     <div class="container my-5">
         <div class="row">
             <div class="col-md-4">
-                <div class="card shadow p-0" style="width: 18rem;">
+                <div class="card shadow p-0" >
             <img src="https://miro.medium.com/v2/resize:fit:1400/1*EkXLPE4U3YDByeQmL7uy7g.png" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">สาขาวิชาเทคโนโลยีสารสนเทศ</h5>
@@ -10,7 +25,7 @@
                      คอมพิวเตอร์และความปลอดภัย หรือ นักพัฒนาระบบสมองกลฝังตัวและไอโอที
                      หรือ นักพัฒนา คอมพิวเตอร์กราฟิก เกมส์ และแอนิเมชัน ในสถานประกอบการและประกอบอาชีพอิสระ
                      รวมทั้งการ ใช้ความรู ้และทักษะเป็นพื้นฐานในการศึกษาต่อในระดับสูงขึ้นได้</p>
-                <a href="http://www.trattc.ac.th:4001/" class="btn btn-primary">อ่านต่อ...</a>
+                <a href="http://www.trattc.ac.th:4001/" class="btn btn-primary" @click="notify">อ่านต่อ...</a>
             </div>
         </div>
             </div>
@@ -34,8 +49,7 @@
     </div>
 </template>
     
-<script setup>
-</script>
+
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
